@@ -1,0 +1,12 @@
+#!/bin/bash
+DIR=`pwd`
+echo "Deleting all .svn folders from:" $DIR
+read -p "Are you sure you want to continue (y/n)?"
+
+if [ "$REPLY" == "y" ]; then
+	echo "Okedoke, deleting all the .svn folders from here on in."
+	find . -name ".svn" | xargs rm -rf
+else
+	echo "Ok, no .svn folders will be deleted"
+fi
+echo "All done"
